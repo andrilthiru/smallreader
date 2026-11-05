@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tamil Small Readers Samples</title>
+<meta name="description" content="Interactive Tamil e-book samples, features document and voice-over samples.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#3a2a00" stroke-width="2.2" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-1.5V19c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5C17 4 14 4.5 12 6z"/><path d="M12 6v14.5"/></svg></div>
+    <div>
+      <h1>Tamil Interactive Small Readers — Samples</h1>
+      <p>தமிழ்ச் சிறுவர் கதைநூல்கள் · Primary 3 · SCORM 1.2 for SLS</p>
+    </div>
+  </header>
+
+  <section class="card" aria-labelledby="h-samples">
+    <h2 id="h-samples">E-book samples</h2>
+    <p>One story, <b>நான் நேர்மையாகவே நடப்பேன்</b>, in two versions. Version 2 is the latest.</p>
+    <div class="grid">
+      <a class="sample" href="samples/" style="text-decoration:none;color:inherit">
+        <img src="assets/v2.jpg" alt="Version 2 story page" loading="lazy">
+        <div class="b">
+          <span class="tag">Open the samples</span>
+          <h3>Version 2 (latest) and Version 1</h3>
+          <p>Play each sample in the browser or download its SCORM package.</p>
+          <div class="row"><span class="blk g">View samples <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </a>
+      <div class="sample">
+        <div class="b">
+          <span class="tag" style="background:var(--blue)">Document</span>
+          <h3>Features document</h3>
+          <p>A short, illustrated guide to the features of both versions, with planned enhancements.</p>
+          <div class="row">
+            <a class="blk b2" href="docs/features.pdf">Read the features (PDF) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="h-vo">
+    <h2 id="h-vo">Voice-over samples</h2>
+    <p>Voice talents for narration and characters. Each sample plays here, or open its link to download.</p>
+    <div class="vo" id="vo"><p class="empty">Voice-over samples will appear here.</p></div>
+  </section>
+
+  <footer>Samples prepared for the Tamil interactive small readers ITQ.</footer>
+</div>
+<script src="voiceovers/list.js"></script>
+<script>
+(function () {
+  var list = window.VOICEOVERS || [], box = document.getElementById('vo');
+  if (!list.length) return;
+  box.innerHTML = '';
+  list.forEach(function (v, i) {
+    var it = document.createElement('div'); it.className = 'item';
+    var n = document.createElement('div'); n.className = 'n'; n.textContent = i + 1;
+    var t = document.createElement('div'); t.className = 't';
+    var b = document.createElement('b'); b.textContent = v.title; t.appendChild(b);
+    if (v.note) { var s = document.createElement('span'); s.textContent = v.note; t.appendChild(s); }
+    var a = document.createElement('audio'); a.controls = true; a.preload = 'none'; a.src = 'voiceovers/' + v.file; t.appendChild(a);
+    var l = document.createElement('a'); l.href = 'voiceovers/' + v.file; l.textContent = 'voiceovers/' + v.file; t.appendChild(l);
+    it.appendChild(n); it.appendChild(t); box.appendChild(it);
+  });
+})();
+</script>
+</body>
+</html>

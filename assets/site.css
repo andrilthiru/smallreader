@@ -1,0 +1,46 @@
+/* Toy Blocks — same look as the e-book */
+@font-face{font-family:"Baloo Thambi 2";src:url(baloo-thambi-2-tamil-500-normal.woff2) format("woff2");font-weight:500}
+@font-face{font-family:"Baloo Thambi 2";src:url(baloo-thambi-2-tamil-700-normal.woff2) format("woff2");font-weight:600 700}
+@font-face{font-family:"Baloo Thambi 2";src:url(baloo-thambi-2-tamil-800-normal.woff2) format("woff2");font-weight:800}
+:root{--sky:#87ceeb;--edge:#5fb0d3;--soft:#e3f4ff;--green:#2fa84f;--greend:#1d7a36;--orange:#ff8a1f;--oranged:#c8600a;
+ --yellow:#ffc928;--yellowd:#c99a00;--blue:#2a7bd1;--blued:#1b579a;--ink:#1f2b40;--mute:#56627a;
+ --font:"Baloo Thambi 2","Noto Sans Tamil","Latha",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
+header.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.logo{width:52px;height:52px;border-radius:16px;background:var(--yellow);box-shadow:0 5px 0 var(--yellowd);display:grid;place-items:center;flex:none}
+.logo svg{width:30px;height:30px}
+header.top h1{margin:0;font-size:clamp(24px,4vw,34px);font-weight:800;line-height:1.2;text-wrap:balance}
+header.top p{margin:2px 0 0;color:var(--ink);opacity:.8;font-weight:600}
+.card{background:#fff;border-radius:26px;box-shadow:0 8px 0 var(--edge);padding:26px clamp(18px,3vw,30px);margin-bottom:26px}
+.card h2{margin:0 0 6px;font-size:24px;font-weight:800}
+.card>p{margin:0 0 16px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.sample{border-radius:20px;background:var(--soft);box-shadow:0 5px 0 #b9d7f1;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.sample img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;max-width:100%}
+.sample .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{align-self:flex-start;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:10px;padding:2px 10px;color:#fff;background:var(--green)}
+.tag.old{background:var(--mute)}
+.sample h3{margin:0;font-size:21px;font-weight:800}
+.sample p{margin:0;color:var(--mute);font-size:15.5px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.blk{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:16px;padding:10px 18px;font:inherit;font-weight:800;color:#fff;text-decoration:none;transition:transform .08s}
+.blk:active{transform:translateY(3px)}
+.blk:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+.g{background:var(--green);box-shadow:0 5px 0 var(--greend)} .o{background:var(--orange);box-shadow:0 5px 0 var(--oranged)}
+.b2{background:var(--blue);box-shadow:0 5px 0 var(--blued)} .w{background:#fff;color:var(--blue);box-shadow:0 5px 0 var(--edge)}
+.blk svg{width:20px;height:20px}
+.vo{display:flex;flex-direction:column;gap:12px}
+.vo .item{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--soft);border-radius:18px;padding:12px 14px;min-width:0}
+.vo .n{width:44px;height:44px;border-radius:14px;background:var(--orange);box-shadow:0 4px 0 var(--oranged);color:#fff;font-weight:800;display:grid;place-items:center;font-size:19px}
+.vo .t{min-width:0}
+.vo .t b{display:block;font-weight:800}
+.vo .t span{display:block;color:var(--mute);font-size:14.5px}
+.vo audio{width:100%;margin-top:6px}
+.vo a{color:var(--blue);font-weight:700;font-size:14.5px;word-break:break-all}
+.empty{color:var(--mute);font-style:italic}
+footer{color:var(--ink);opacity:.75;font-size:14px;text-align:center}
+.crumb{display:inline-flex;margin-bottom:16px}
+@media (prefers-reduced-motion:reduce){.blk{transition:none}}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>நான் நேர்மையாகவே நடப்பேன்</title>
+<link rel="stylesheet" href="book.css">
+</head>
+<body>
+<div id="stage">
+
+  <!-- START -->
+  <section class="scr" id="start">
+    <img class="bg" id="cover" alt="">
+    <div class="scard">
+      <div><span class="chip" id="lvl"></span><span class="chip" id="dur"></span></div>
+      <h1 id="title"></h1>
+      <div class="go">
+        <button class="blk g" id="goListen"><span data-i="listen"></span>கதையைக் கேள்<small>பக்கங்கள் தானாகத் திரும்பும்</small></button>
+        <button class="blk y" id="goRead"><span data-i="book"></span>நானே படிப்பேன்<small>நானே பக்கத்தைத் திருப்புவேன்</small></button>
+      </div>
+      <div class="resume" id="resume"><span id="resumeTxt"></span><button id="fromStart">முதல் பக்கத்திலிருந்து</button></div>
+    </div>
+  </section>
+
+  <!-- READER -->
+  <section class="scr" id="reader">
+    <div class="top">
+      <div class="t" data-title></div>
+      <div class="modes" role="group" aria-label="முறை">
+        <button id="mListen"><span data-i="listen"></span>கேள்</button>
+        <button id="mRead"><span data-i="book"></span>படி</button>
+      </div>
+      <button class="blk y sq wbtn" data-wb aria-label="சொற்பொருள்"><span data-i="box"></span><b class="cnt"></b></button>
+      <button class="blk b sq" data-pages aria-label="கதைப் பக்கங்கள்"><span data-i="grid"></span></button>
+      <button class="blk g sq" data-games aria-label="பயிற்சி"><span data-i="game"></span></button>
+      <button class="blk b sq" data-proj aria-label="முழுத் திரை (வகுப்புக்கு)"><span data-i="proj"></span></button>
+      <button class="blk b sq" data-home aria-label="முகப்பு"><span data-i="home"></span></button>
+      <button class="blk r sq" data-close aria-label="மூடு"><span data-i="x"></span></button>
+    </div>
+    <div class="art" id="art"></div>
+    <div class="panel">
+      <div class="txt" id="txt"><div class="in" id="txtIn"></div></div>
+    </div>
+    <div class="hint" id="hint">கோடிட்ட சொல்லைத் தொடு, காணொளி பார்க்கலாம்!</div>
+    <div class="bottom">
+      <button class="blk b projoff" id="projOff" data-proj aria-label="முழுத் திரையிலிருந்து வெளியேறு"><span data-i="exitproj"></span></button>
+      <button class="blk ol prev" id="prev" aria-label="முந்தைய பக்கம்"><span data-i="left"></span></button>
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="pn" id="pn"></div>
+      <button class="blk g play" id="play"></button>
+      <button class="blk l rep" id="replay" aria-label="மீண்டும் கேள்"><span data-i="replay"></span></button>
+      <button class="blk o next" id="next" aria-label="அடுத்த பக்கம்"><span data-i="right"></span></button>
+      <div class="tip" id="nextTip">பயிற்சிக்குச் செல்வோம்!</div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section class="scr" id="act">
+    <div class="top">
+      <div class="t" data-title></div>
+      <button class="blk y sq wbtn" data-wb aria-label="சொற்பொருள்"><span data-i="box"></span><b class="cnt"></b></button>
+      <button class="blk b sq" data-pages aria-label="கதைப் பக்கங்கள்"><span data-i="grid"></span></button>
+      <button class="blk b sq" data-home aria-label="முகப்பு"><span data-i="home"></span></button>
+      <button class="blk r sq" data-close aria-label="மூடு"><span data-i="x"></span></button>
+    </div>
+    <div class="card intro" id="aIntro">
+      <div class="badge"><span data-i="puzzle"></span></div>
+      <h2 id="introTxt"></h2>
+      <button class="blk g" id="toMatch">பயிற்சி<span data-i="right"></span></button>
+    </div>
+    <div class="card" id="aMatch">
+      <div class="head"><h2 id="matchTitle"></h2><span class="count" id="mCount"></span></div>
+      <div class="mgrid" id="mGrid"></div>
+      <div class="tray" id="tray"></div>
+      <div class="foot"><span class="ins" id="mMsg">பொருளை இழுத்து வை, அல்லது தொட்டுப் பிறகு இடத்தைத் தொடு.</span><span class="sp"></span><span class="count tries" id="mTries"></span><button class="blk g" id="mCheck">சரிபார்</button></div>
+    </div>
+    <div class="card" id="aQuiz">
+      <div class="ins" id="qIns"></div>
+      <div class="head"><h2 id="qHead">தெரிவுவினா</h2><span class="count" id="qCount"></span></div>
+      <div class="q" id="qText"></div>
+      <div class="opts" id="opts"></div>
+      <div class="foot"><div class="fb" id="fb"></div><span class="sp"></span><button class="blk o" id="qNext">அடுத்தது<span data-i="right"></span></button></div>
+    </div>
+    <div class="card result" id="aResult">
+      <div class="stars" id="stars"></div>
+      <h2 id="rTitle"></h2>
+      <p id="rText"></p>
+      <div class="row">
+        <button class="blk l" id="rRetry"><span data-i="replay"></span>மீண்டும் முயல்க</button>
+        <button class="blk b" id="rReview">மதிப்பாய்வு</button>
+        <button class="blk o" id="rDone">நிறைவு<span data-i="right"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO POP-UP -->
+  <div id="pop" role="dialog" aria-modal="true">
+    <div class="veil" id="popVeil"></div>
+    <div class="box">
+      <div class="vbox" id="vbox"><video id="vid" playsinline preload="auto"></video><div class="pbar"><i id="vbar"></i></div>
+        <button class="blk g again" id="vAgain" aria-label="மீண்டும் பார்"><span data-i="replay"></span></button></div>
+      <div class="cap" id="cap"></div>
+      <button class="blk r x" id="popX" aria-label="மூடு"><span data-i="x"></span></button>
+    </div>
+  </div>
+
+  <!-- WORD BANK -->
+  <div id="wbank" role="dialog" aria-modal="true" aria-labelledby="wbTitle">
+    <div class="veil" id="wbVeil"></div>
+    <div class="box">
+      <div class="head"><span class="wbicon"><span data-i="box"></span></span><h2 id="wbTitle">சொற்பொருள்</h2><span class="count" id="wbCount"></span></div>
+      <div class="wbgrid" id="wbGrid"></div>
+      <button class="blk r x" id="wbX" aria-label="மூடு"><span data-i="x"></span></button>
+    </div>
+  </div>
+  <!-- STORY CARDS -->
+  <div id="pages" role="dialog" aria-modal="true" aria-labelledby="pgTitle">
+    <div class="veil" id="pgVeil"></div>
+    <div class="box">
+      <div class="head"><span class="wbicon pgicon"><span data-i="grid"></span></span><h2 id="pgTitle">கதைப் பக்கங்கள்</h2></div>
+      <div class="pggrid" id="pgGrid"></div>
+      <button class="blk r x" id="pgX" aria-label="மூடு"><span data-i="x"></span></button>
+    </div>
+  </div>
+  <div id="toast" role="status"></div>
+
+  <div id="bye"><div>நன்றி! இந்தச் சாளரத்தை இப்போது மூடலாம்.</div><button class="blk w bt" id="byeBack"><span data-i="left"></span>திரும்பு</button></div>
+</div>
+<script src="scorm.js"></script>
+<script src="story.js"></script>
+<script src="book.js"></script>
+</body>
+</html>
