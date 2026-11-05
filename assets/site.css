@@ -39,8 +39,30 @@ header.top p{margin:2px 0 0;color:var(--ink);opacity:.8;font-weight:600}
 .vo .t b{display:block;font-weight:800}
 .vo .t span{display:block;color:var(--mute);font-size:14.5px}
 .vo audio{width:100%;margin-top:6px}
-.vo a{color:var(--blue);font-weight:700;font-size:14.5px;word-break:break-all}
+.vo a.dl{display:inline-block;margin-top:4px;color:var(--blue);font-weight:800;font-size:14.5px;text-decoration:underline}
 .empty{color:var(--mute);font-style:italic}
 footer{color:var(--ink);opacity:.75;font-size:14px;text-align:center}
 .crumb{display:inline-flex;margin-bottom:16px}
 @media (prefers-reduced-motion:reduce){.blk{transition:none}}
+
+/* ---- landing: three panels ---- */
+.wrap.wide{max-width:1240px}
+.panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+@media (max-width:980px){.panels{grid-template-columns:1fr}}
+.panel{background:#fff;border-radius:26px;box-shadow:0 8px 0 var(--edge);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.panel>h2{margin:0;padding:16px 22px;font-size:21px;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px}
+.panel>h2 svg{width:26px;height:26px;flex:none}
+.panel.p1>h2{background:var(--green)} .panel.p2>h2{background:var(--blue)} .panel.p3>h2{background:var(--orange)}
+.panel .in{padding:18px 20px 22px;display:flex;flex-direction:column;gap:14px}
+.panel .in>p{margin:0;color:var(--mute);font-size:15.5px}
+.ver{background:var(--soft);border-radius:18px;overflow:hidden;box-shadow:0 4px 0 #b9d7f1}
+.ver img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.ver .b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px}
+.ver h3{margin:0;font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ver .row{padding-top:2px}
+.blk.sm{padding:8px 14px;font-size:15px;border-radius:14px}
+.docimg{border-radius:16px;overflow:hidden;box-shadow:0 4px 0 #b9d7f1;border:1px solid #c9dced}
+.docimg img{width:100%;display:block}
+.panel .vo .item{grid-template-columns:38px 1fr;gap:12px;padding:10px 12px}
+.panel .vo .n{width:38px;height:38px;font-size:17px;border-radius:12px}
+.panel .vo audio{height:36px}
